@@ -1,0 +1,9 @@
+{
+  "notification_preview": {
+    "Message": "{\"counts\": {\"FAIL\": 6, \"NOT_APPLICABLE\": 1, \"PASS\": 0, \"UNKNOWN\": 0}, \"coverage\": \"COMPLETE_WITHIN_SCOPE\", \"notice\": \"Review restricted report. This is not a HIPAA compliance determination.\", \"report_uri\": null, \"run_id\": \"demo-misconfigured\", \"status\": \"FAIL\"}",
+    "Subject": "MedTech baseline: FAIL"
+  },
+  "report_uri": null,
+  "s3": "DISABLED",
+  "sns": "PREVIEW_ONLY"
+}

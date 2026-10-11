@@ -1,0 +1,301 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: MedTech scoped checker - default demo mode, disabled schedule and delivery. Deploying creates billable resources.
+Parameters:
+  ScanBucketName:
+    Type: String
+    Default: medtech-demo-patient-data
+    AllowedPattern: '[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]'
+    Description: Existing general-purpose bucket in this account and deployment region. It is never created or modified.
+  ScanMode:
+    Type: String
+    Default: demo
+    AllowedValues: [demo, aws]
+  AllowAwsReads:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['false', 'true']
+  EnableReportWrite:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['false', 'true']
+  EnableNotifications:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['false', 'true']
+  EnableMonitoring:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['false', 'true']
+  EnableSchedule:
+    Type: String
+    Default: 'false'
+    AllowedValues: ['false', 'true']
+  ScheduleExpression:
+    Type: String
+    Default: rate(1 day)
+    AllowedValues: [rate(1 day), rate(7 days)]
+  EmailEndpoint:
+    Type: String
+    Default: ''
+    Description: Leave empty to avoid sending an SNS subscription confirmation email.
+Conditions:
+  ScheduleEnabled: !Equals [!Ref EnableSchedule, 'true']
+  SubscribeEmail: !Not [!Equals [!Ref EmailEndpoint, '']]
+  CloudReadsEnabled: !And
+    - !Equals [!Ref ScanMode, aws]
+    - !Equals [!Ref AllowAwsReads, 'true']
+  MonitoringEnabled: !And
+    - !Condition CloudReadsEnabled
+    - !Equals [!Ref EnableMonitoring, 'true']
+  S3WriteEnabled: !And
+    - !Condition CloudReadsEnabled
+    - !Equals [!Ref EnableReportWrite, 'true']
+  SNSPublishEnabled: !And
+    - !Condition CloudReadsEnabled
+    - !Equals [!Ref EnableNotifications, 'true']
+Resources:
+  ReportBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules: [{ObjectOwnership: BucketOwnerEnforced}]
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault: {SSEAlgorithm: 'aws:kms'}
+            BucketKeyEnabled: false
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpireReports
+            Status: Enabled
+            ExpirationInDays: 30
+  ReportBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ReportBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource:
+              - !GetAtt ReportBucket.Arn
+              - !Sub '${ReportBucket.Arn}/*'
+            Condition:
+              Bool: {aws:SecureTransport: 'false'}
+  AlertTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      KmsMasterKeyId: alias/aws/sns
+  EmailSubscription:
+    Type: AWS::SNS::Subscription
+    Condition: SubscribeEmail
+    Properties:
+      TopicArn: !Ref AlertTopic
+      Protocol: email
+      Endpoint: !Ref EmailEndpoint
+  FailureQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      SqsManagedSseEnabled: true
+      MessageRetentionPeriod: 1209600
+  FunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/${AWS::StackName}-checker'
+      RetentionInDays: 14
+  CheckerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: {Service: lambda.amazonaws.com}
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: RuntimeAndFailureDestination
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !GetAtt FunctionLogGroup.Arn
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt FailureQueue.Arn
+        - !If
+          - CloudReadsEnabled
+          - PolicyName: ScopedReadOnlyInspection
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: [s3:GetBucketPublicAccessBlock, s3:GetEncryptionConfiguration]
+                  Resource: !Sub 'arn:${AWS::Partition}:s3:::${ScanBucketName}'
+                - Effect: Allow
+                  Action: s3:GetAccountPublicAccessBlock
+                  Resource: '*'
+                - Effect: Allow
+                  Action: [iam:ListUsers, iam:GetAccountSummary]
+                  Resource: '*'
+                - Effect: Allow
+                  Action: [iam:GetLoginProfile, iam:ListMFADevices]
+                  Resource: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:user/*'
+                - Effect: Allow
+                  Action: ec2:DescribeSecurityGroups
+                  Resource: '*'
+                  Condition:
+                    StringEquals:
+                      aws:RequestedRegion: !Ref AWS::Region
+                - Effect: Allow
+                  Action: cloudtrail:DescribeTrails
+                  Resource: '*'
+                  Condition:
+                    StringEquals:
+                      aws:RequestedRegion: !Ref AWS::Region
+                - Effect: Allow
+                  Action: [cloudtrail:GetTrailStatus, cloudtrail:GetEventSelectors]
+                  Resource: !Sub 'arn:${AWS::Partition}:cloudtrail:*:${AWS::AccountId}:trail/*'
+          - !Ref AWS::NoValue
+        - !If
+          - MonitoringEnabled
+          - PolicyName: PublishOperationalMetrics
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: cloudwatch:PutMetricData
+                  Resource: '*'
+                  Condition:
+                    StringEquals:
+                      cloudwatch:namespace: MedTech/SecurityBaseline
+          - !Ref AWS::NoValue
+        - !If
+          - S3WriteEnabled
+          - PolicyName: WriteReportsOnly
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: s3:PutObject
+                  Resource: !Sub '${ReportBucket.Arn}/reports/*'
+                - Effect: Allow
+                  Action: kms:GenerateDataKey
+                  Resource: '*'
+                  Condition:
+                    StringEquals:
+                      kms:ViaService: !Sub 's3.${AWS::Region}.${AWS::URLSuffix}'
+                      kms:CallerAccount: !Ref AWS::AccountId
+                    StringLike:
+                      kms:EncryptionContext:aws:s3:arn: !Sub '${ReportBucket.Arn}/reports/*'
+          - !Ref AWS::NoValue
+        - !If
+          - SNSPublishEnabled
+          - PolicyName: PublishSummaryOnly
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action: sns:Publish
+                  Resource: !Ref AlertTopic
+                - Effect: Allow
+                  Action: [kms:GenerateDataKey, kms:Decrypt]
+                  Resource: '*'
+                  Condition:
+                    StringEquals:
+                      kms:ViaService: !Sub 'sns.${AWS::Region}.${AWS::URLSuffix}'
+                      kms:CallerAccount: !Ref AWS::AccountId
+                      kms:EncryptionContext:aws:sns:topicArn: !Ref AlertTopic
+          - !Ref AWS::NoValue
+  Checker:
+    Type: AWS::Serverless::Function
+    DependsOn: FunctionLogGroup
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-checker'
+      CodeUri: deploy/package/
+      Handler: medtech.lambda_handler.handler
+      Runtime: python3.12
+      Architectures: [arm64]
+      Timeout: 300
+      MemorySize: 256
+      ReservedConcurrentExecutions: 1
+      Role: !GetAtt CheckerRole.Arn
+      Environment:
+        Variables:
+          SCAN_MODE: !Ref ScanMode
+          ALLOW_AWS_READS: !Ref AllowAwsReads
+          SCAN_SCOPE_JSON: !Sub '{"account_id":"${AWS::AccountId}","regions":["${AWS::Region}"],"buckets":{"${ScanBucketName}":"${AWS::Region}"}}'
+          REPORT_BUCKET: !Ref ReportBucket
+          SNS_TOPIC_ARN: !Ref AlertTopic
+          ENABLE_METRICS: !Ref EnableMonitoring
+          ENABLE_S3_WRITE: !Ref EnableReportWrite
+          ENABLE_SNS_PUBLISH: !Ref EnableNotifications
+      EventInvokeConfig:
+        MaximumEventAgeInSeconds: 3600
+        MaximumRetryAttempts: 2
+        DestinationConfig:
+          OnFailure:
+            Type: SQS
+            Destination: !GetAtt FailureQueue.Arn
+      Events:
+        DailyOrWeekly:
+          Type: Schedule
+          Properties:
+            Schedule: !Ref ScheduleExpression
+            Enabled: !If [ScheduleEnabled, true, false]
+            RetryPolicy:
+              MaximumEventAgeInSeconds: 3600
+              MaximumRetryAttempts: 2
+            DeadLetterConfig:
+              Type: SQS
+  OperationsDashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Condition: MonitoringEnabled
+    Properties:
+      DashboardBody: !Sub |
+        {"widgets":[{"type":"metric","x":0,"y":0,"width":24,"height":6,"properties":{"title":"Findings and completed runs","region":"${AWS::Region}","view":"timeSeries","stat":"Maximum","period":3600,"metrics":[["MedTech/SecurityBaseline","FailedFindings"],[".","UnknownFindings"],[".","CompletedRuns"]]}}]}
+  FunctionErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Condition: MonitoringEnabled
+    Properties:
+      AlarmDescription: Inspect Lambda errors and failure queue. No automatic email action configured.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions: [{Name: FunctionName, Value: !Ref Checker}]
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+  EvidenceGapsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Condition: MonitoringEnabled
+    Properties:
+      AlarmDescription: Unknown evidence requires investigation. This is not a missed-run alarm.
+      Namespace: MedTech/SecurityBaseline
+      MetricName: UnknownFindings
+      Statistic: Maximum
+      Period: 3600
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+Outputs:
+  FunctionName:
+    Value: !Ref Checker
+  ReportBucketName:
+    Value: !Ref ReportBucket
+  AlertTopicArn:
+    Value: !Ref AlertTopic
+  AsyncFailureQueue:
+    Value: !Ref FailureQueue

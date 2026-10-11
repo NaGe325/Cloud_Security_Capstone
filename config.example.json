@@ -1,0 +1,9 @@
+{
+  "account_id": "123456789012",
+  "regions": [
+    "us-east-1"
+  ],
+  "buckets": {
+    "medtech-demo-patient-data": "us-east-1"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "report_uri": null,
+  "s3": "DISABLED",
+  "sns": "NOT_REQUIRED"
+}

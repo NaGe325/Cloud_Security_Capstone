@@ -1,0 +1,159 @@
+{
+  "baseline": "MedTech educational baseline v1",
+  "disclaimer": "Five technical controls only; not a HIPAA compliance determination. PASS applies only to this baseline and explicit scope.",
+  "findings": [
+    {
+      "control_id": "CLOUDTRAIL_LOGGING",
+      "evidence": {
+        "read_errors": [],
+        "trails": [
+          {
+            "delivery_error_present": false,
+            "full_management_events": true,
+            "global_service_events": true,
+            "home_region": "us-east-1",
+            "is_logging": true,
+            "qualifies": true,
+            "trail_arn": "arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit"
+          }
+        ]
+      },
+      "id": "d62deee97a1ceae99017",
+      "reason": "At least one qualifying active trail covers this region.",
+      "region": "us-east-1",
+      "remediation": "Enable a covering trail with logging, global events, all read/write management events, and healthy delivery.",
+      "resource": "regional-management-events",
+      "severity": "INFORMATIONAL",
+      "status": "PASS"
+    },
+    {
+      "control_id": "EC2_ADMIN_PORTS",
+      "evidence": {
+        "exposed_rules": []
+      },
+      "id": "6ee8994f49f5a8d90029",
+      "reason": "No direct /0 IPv4/IPv6 SSH or RDP ingress rule found.",
+      "region": "us-east-1",
+      "remediation": "Restrict administrative ingress to approved sources or use Systems Manager Session Manager.",
+      "resource": "sg-0123456789abcdef0",
+      "severity": "INFORMATIONAL",
+      "status": "PASS"
+    },
+    {
+      "control_id": "IAM_MFA",
+      "evidence": {
+        "console_login": true,
+        "mfa_device_count": 1
+      },
+      "id": "46b6c72ef257fa62c6ee",
+      "reason": "Console IAM user has enrolled MFA.",
+      "region": "global",
+      "remediation": "Enroll MFA for this console user; prefer federation and verify sign-in enforcement separately.",
+      "resource": "analyst",
+      "severity": "INFORMATIONAL",
+      "status": "PASS"
+    },
+    {
+      "control_id": "IAM_MFA",
+      "evidence": {
+        "AccountMFAEnabled": 1
+      },
+      "id": "cc06ee06ae325623b848",
+      "reason": "Root MFA enrollment baseline (centralized root credential removal needs manual exception review).",
+      "region": "global",
+      "remediation": "Protect root access with MFA or document and verify centralized root credential removal.",
+      "resource": "root",
+      "severity": "INFORMATIONAL",
+      "status": "PASS"
+    },
+    {
+      "control_id": "IAM_MFA",
+      "evidence": {},
+      "id": "5ac3b46f25e97ccc4993",
+      "reason": "No console login profile observed; API-key/STS MFA enforcement is outside scope.",
+      "region": "global",
+      "remediation": "",
+      "resource": "service-backend",
+      "severity": "INFORMATIONAL",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "control_id": "S3_ENCRYPTION",
+      "evidence": {
+        "error_code": "AccessDenied"
+      },
+      "id": "efbb0fd1df4edaa91137",
+      "reason": "AWS evidence unavailable; review permissions, throttling, region, or resource deletion.",
+      "region": "us-east-1",
+      "remediation": "",
+      "resource": "medtech-demo-patient-data",
+      "severity": "INFORMATIONAL",
+      "status": "UNKNOWN"
+    },
+    {
+      "control_id": "S3_PUBLIC_ACCESS",
+      "evidence": {
+        "effective_known_flags": {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true
+        },
+        "layers": {
+          "account": {
+            "BlockPublicAcls": false,
+            "BlockPublicPolicy": false,
+            "IgnorePublicAcls": false,
+            "RestrictPublicBuckets": false
+          },
+          "bucket": {
+            "BlockPublicAcls": true,
+            "BlockPublicPolicy": true,
+            "IgnorePublicAcls": true,
+            "RestrictPublicBuckets": true
+          }
+        },
+        "read_errors": {}
+      },
+      "id": "3f2ec9b510e066500743",
+      "reason": "All four Block Public Access flags enforced by the account/bucket combination.",
+      "region": "us-east-1",
+      "remediation": "Review access requirements, then enable all four effective Block Public Access flags; inspect policies/ACLs separately.",
+      "resource": "medtech-demo-patient-data",
+      "severity": "INFORMATIONAL",
+      "status": "PASS"
+    }
+  ],
+  "generated_at": "2026-10-11T12:00:00+00:00",
+  "mode": "SIMULATED",
+  "run_id": "demo-incomplete",
+  "schema_version": "1.0",
+  "scope": {
+    "account_id": "123456789012",
+    "buckets": {
+      "medtech-demo-patient-data": "us-east-1"
+    },
+    "regions": [
+      "us-east-1"
+    ]
+  },
+  "summary": {
+    "assessed_pass_percent": 100.0,
+    "controls": {
+      "CLOUDTRAIL_LOGGING": "PASS",
+      "EC2_ADMIN_PORTS": "PASS",
+      "IAM_MFA": "PASS",
+      "S3_ENCRYPTION": "UNKNOWN",
+      "S3_PUBLIC_ACCESS": "PASS"
+    },
+    "counts": {
+      "FAIL": 0,
+      "NOT_APPLICABLE": 1,
+      "PASS": 5,
+      "UNKNOWN": 1
+    },
+    "coverage": "INCOMPLETE",
+    "risk_counts": {},
+    "status": "INCOMPLETE"
+  }
+}

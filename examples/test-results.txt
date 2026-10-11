@@ -1,0 +1,22 @@
+........................................................................ [ 81%]
+................                                                         [100%]
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.12.10-final-0 _______________
+
+Name                        Stmts   Miss  Cover   Missing
+---------------------------------------------------------
+medtech/__init__.py             0      0   100%
+medtech/aws.py                 15      0   100%
+medtech/checks.py             130      0   100%
+medtech/cli.py                 45      1    98%   53
+medtech/config.py              27      0   100%
+medtech/delivery.py            28      0   100%
+medtech/html_report.py         18      0   100%
+medtech/lambda_handler.py      36      0   100%
+medtech/monitoring.py           9      0   100%
+medtech/offline.py             37      0   100%
+medtech/report.py              26      0   100%
+---------------------------------------------------------
+TOTAL                         371      1    99%
+Coverage JSON written to file examples/coverage.json
+88 passed in 15.56s

@@ -1,0 +1,9 @@
+{
+  "notification_preview": {
+    "Message": "{\"counts\": {\"FAIL\": 0, \"NOT_APPLICABLE\": 1, \"PASS\": 5, \"UNKNOWN\": 1}, \"coverage\": \"INCOMPLETE\", \"notice\": \"Review restricted report. This is not a HIPAA compliance determination.\", \"report_uri\": null, \"run_id\": \"demo-incomplete\", \"status\": \"INCOMPLETE\"}",
+    "Subject": "MedTech baseline: INCOMPLETE"
+  },
+  "report_uri": null,
+  "s3": "DISABLED",
+  "sns": "PREVIEW_ONLY"
+}

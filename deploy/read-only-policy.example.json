@@ -1,0 +1,53 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetEncryptionConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::medtech-demo-patient-data"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetAccountPublicAccessBlock",
+        "iam:GetAccountSummary",
+        "iam:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetLoginProfile",
+        "iam:ListMFADevices"
+      ],
+      "Resource": "arn:aws:iam::123456789012:user/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSecurityGroups",
+        "cloudtrail:DescribeTrails"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": [
+            "us-east-1"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:GetEventSelectors"
+      ],
+      "Resource": "arn:aws:cloudtrail:*:123456789012:trail/*"
+    }
+  ]
+}

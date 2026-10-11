@@ -1,0 +1,210 @@
+{
+  "description": "Synthetic API responses; no real patient data or AWS access",
+  "timestamp": "2026-10-11T12:00:00+00:00",
+  "scope": {
+    "account_id": "123456789012",
+    "regions": [
+      "us-east-1"
+    ],
+    "buckets": {
+      "medtech-demo-patient-data": "us-east-1"
+    }
+  },
+  "clients": {
+    "s3:us-east-1": [
+      {
+        "operation": "get_public_access_block",
+        "params": {
+          "Bucket": "medtech-demo-patient-data",
+          "ExpectedBucketOwner": "123456789012"
+        },
+        "response": {
+          "PublicAccessBlockConfiguration": {
+            "BlockPublicAcls": false,
+            "IgnorePublicAcls": false,
+            "BlockPublicPolicy": false,
+            "RestrictPublicBuckets": false
+          }
+        }
+      },
+      {
+        "operation": "get_bucket_encryption",
+        "params": {
+          "Bucket": "medtech-demo-patient-data",
+          "ExpectedBucketOwner": "123456789012"
+        },
+        "response": {
+          "ServerSideEncryptionConfiguration": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "s3control:us-east-1": [
+      {
+        "operation": "get_public_access_block",
+        "params": {
+          "AccountId": "123456789012"
+        },
+        "response": {
+          "PublicAccessBlockConfiguration": {
+            "BlockPublicAcls": false,
+            "IgnorePublicAcls": false,
+            "BlockPublicPolicy": false,
+            "RestrictPublicBuckets": false
+          }
+        }
+      }
+    ],
+    "iam:us-east-1": [
+      {
+        "operation": "get_account_summary",
+        "params": {},
+        "response": {
+          "SummaryMap": {
+            "AccountMFAEnabled": 0
+          }
+        }
+      },
+      {
+        "operation": "list_users",
+        "params": {},
+        "response": {
+          "Users": [
+            {
+              "Path": "/",
+              "UserName": "analyst",
+              "UserId": "AIDA123456789EXAMPLE1",
+              "Arn": "arn:aws:iam::123456789012:user/analyst",
+              "CreateDate": "2026-01-01T00:00:00Z"
+            },
+            {
+              "Path": "/",
+              "UserName": "service-backend",
+              "UserId": "AIDA123456789EXAMPLE2",
+              "Arn": "arn:aws:iam::123456789012:user/service-backend",
+              "CreateDate": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "IsTruncated": false
+        }
+      },
+      {
+        "operation": "get_login_profile",
+        "params": {
+          "UserName": "analyst"
+        },
+        "response": {
+          "LoginProfile": {
+            "UserName": "analyst",
+            "CreateDate": "2026-01-01T00:00:00Z"
+          }
+        }
+      },
+      {
+        "operation": "list_mfa_devices",
+        "params": {
+          "UserName": "analyst"
+        },
+        "response": {
+          "MFADevices": [],
+          "IsTruncated": false
+        }
+      },
+      {
+        "operation": "get_login_profile",
+        "params": {
+          "UserName": "service-backend"
+        },
+        "error": "NoSuchEntity"
+      }
+    ],
+    "ec2:us-east-1": [
+      {
+        "operation": "describe_security_groups",
+        "params": {},
+        "response": {
+          "SecurityGroups": [
+            {
+              "GroupId": "sg-0123456789abcdef0",
+              "GroupName": "medtech-app",
+              "Description": "Synthetic demo group",
+              "IpPermissions": [
+                {
+                  "IpProtocol": "tcp",
+                  "FromPort": 22,
+                  "ToPort": 22,
+                  "IpRanges": [
+                    {
+                      "CidrIp": "0.0.0.0/0"
+                    }
+                  ]
+                },
+                {
+                  "IpProtocol": "tcp",
+                  "FromPort": 3389,
+                  "ToPort": 3389,
+                  "Ipv6Ranges": [
+                    {
+                      "CidrIpv6": "::/0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "cloudtrail:us-east-1": [
+      {
+        "operation": "describe_trails",
+        "params": {
+          "includeShadowTrails": true
+        },
+        "response": {
+          "trailList": [
+            {
+              "Name": "medtech-audit",
+              "TrailARN": "arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit",
+              "HomeRegion": "us-east-1",
+              "IsMultiRegionTrail": true,
+              "IncludeGlobalServiceEvents": true
+            }
+          ]
+        }
+      },
+      {
+        "operation": "get_trail_status",
+        "params": {
+          "Name": "arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit"
+        },
+        "response": {
+          "IsLogging": false
+        }
+      },
+      {
+        "operation": "get_event_selectors",
+        "params": {
+          "TrailName": "arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit"
+        },
+        "response": {
+          "TrailARN": "arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit",
+          "EventSelectors": [
+            {
+              "ReadWriteType": "All",
+              "IncludeManagementEvents": true,
+              "ExcludeManagementEventSources": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

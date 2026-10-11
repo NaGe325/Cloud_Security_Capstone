@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedTech report / demo-misconfigured</title><style>
+:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f6f7f9;color:#0f172a;font:16px/1.5 Arial,sans-serif}header{background:#1b2a49;color:white;padding:32px max(24px,calc((100% - 1060px)/2))}header p{margin-bottom:0}h1{font-size:28px;margin:8px 0}main{max-width:1108px;margin:auto;padding:24px}.eyebrow{font-size:12px;letter-spacing:.1em}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}.stats>div{background:white;padding:16px;border-bottom:3px solid #1b2a49}.stats strong{display:block;font-size:32px}.stats span{color:#55595f}.notice{border-left:4px solid #8a5a00;background:#fff6dd;padding:16px}.finding{background:white;border:1px solid #d5dce6;padding:22px;margin:16px 0;border-radius:8px}.finding-head{display:flex;gap:12px;align-items:center;font-size:12px;font-weight:bold}.status{padding:3px 8px;border-radius:4px;background:#eef1f6}.fail{background:#fbe9ec;color:#b42318}.unknown{background:#fff6dd;color:#8a5a00}.pass{background:#e6f4ec;color:#246947}h3{margin:10px 0 4px}.resource{overflow-wrap:anywhere;color:#55595f;font-size:14px}.next{border-top:1px solid #d5dce6;padding-top:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#23262b;color:#e6e8eb;padding:16px;border-radius:6px;font-size:13px}summary{cursor:pointer}table{border-collapse:collapse;width:100%;background:white}td{padding:10px;border-bottom:1px solid #d5dce6}footer{margin-top:24px;color:#55595f;font-size:13px}@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:23px}}@media print{header{background:white;color:#1b2a49}.finding{break-inside:avoid}}
+</style></head><body><header><div class="eyebrow">MEDTECH AI / SECURITY BASELINE</div><h1>Security compliance report</h1><p>SIMULATED / demo-misconfigured</p></header><main>
+<h2>FAIL</h2><p>Coverage: <strong>COMPLETE_WITHIN_SCOPE</strong></p>
+<div class="stats"><div><strong>0</strong><span>Passed</span></div><div><strong>6</strong><span>Failed</span></div><div><strong>0</strong><span>Unknown</span></div><div><strong>1</strong><span>Not applicable</span></div></div><p>Assessed pass rate: <strong>0.0%</strong>. Excludes unknown and not-applicable results.</p>
+<div class="notice">Five technical controls only; not a HIPAA compliance determination. PASS applies only to this baseline and explicit scope.</div><p>Account: 123456789012<br>Regions: us-east-1<br>Generated: 2026-10-11T12:00:00+00:00</p>
+<h2>Five control groups</h2><table><tbody><tr><td>S3 public access</td><td>FAIL</td></tr><tr><td>S3 default encryption</td><td>FAIL</td></tr><tr><td>Root and console-user MFA</td><td>FAIL</td></tr><tr><td>SSH and RDP ingress</td><td>FAIL</td></tr><tr><td>CloudTrail active logging</td><td>FAIL</td></tr></tbody></table>
+<h2>Findings and next steps</h2><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>CRITICAL</span></div>
+<h3>Root and console-user MFA</h3><div class="resource">root / global</div>
+<p>Root MFA enrollment baseline (centralized root credential removal needs manual exception review).</p><p class="next"><strong>Next step:</strong> Protect root access with MFA or document and verify centralized root credential removal.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;AccountMFAEnabled&quot;: 0
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>HIGH</span></div>
+<h3>CloudTrail active logging</h3><div class="resource">regional-management-events / us-east-1</div>
+<p>No proven qualifying active trail; inspect management-event coverage and delivery status.</p><p class="next"><strong>Next step:</strong> Enable a covering trail with logging, global events, all read/write management events, and healthy delivery.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;read_errors&quot;: [],
+  &quot;trails&quot;: [
+    {
+      &quot;delivery_error_present&quot;: false,
+      &quot;full_management_events&quot;: true,
+      &quot;global_service_events&quot;: true,
+      &quot;home_region&quot;: &quot;us-east-1&quot;,
+      &quot;is_logging&quot;: false,
+      &quot;qualifies&quot;: false,
+      &quot;trail_arn&quot;: &quot;arn:aws:cloudtrail:us-east-1:123456789012:trail/medtech-audit&quot;
+    }
+  ]
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>HIGH</span></div>
+<h3>SSH and RDP ingress</h3><div class="resource">sg-0123456789abcdef0 / us-east-1</div>
+<p>Internet-wide administrative port rule found; actual reachability is not tested.</p><p class="next"><strong>Next step:</strong> Restrict administrative ingress to approved sources or use Systems Manager Session Manager.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;exposed_rules&quot;: [
+    {
+      &quot;cidrs&quot;: [
+        &quot;0.0.0.0/0&quot;
+      ],
+      &quot;ports&quot;: [
+        22
+      ],
+      &quot;protocol&quot;: &quot;tcp&quot;
+    },
+    {
+      &quot;cidrs&quot;: [
+        &quot;::/0&quot;
+      ],
+      &quot;ports&quot;: [
+        3389
+      ],
+      &quot;protocol&quot;: &quot;tcp&quot;
+    }
+  ]
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>HIGH</span></div>
+<h3>Root and console-user MFA</h3><div class="resource">analyst / global</div>
+<p>Console IAM user has no enrolled MFA.</p><p class="next"><strong>Next step:</strong> Enroll MFA for this console user; prefer federation and verify sign-in enforcement separately.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;console_login&quot;: true,
+  &quot;mfa_device_count&quot;: 0
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>HIGH</span></div>
+<h3>S3 public access</h3><div class="resource">medtech-demo-patient-data / us-east-1</div>
+<p>Public-access prevention baseline is incomplete; this does not prove data is public.</p><p class="next"><strong>Next step:</strong> Review access requirements, then enable all four effective Block Public Access flags; inspect policies/ACLs separately.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;effective_known_flags&quot;: {
+    &quot;BlockPublicAcls&quot;: false,
+    &quot;BlockPublicPolicy&quot;: false,
+    &quot;IgnorePublicAcls&quot;: false,
+    &quot;RestrictPublicBuckets&quot;: false
+  },
+  &quot;layers&quot;: {
+    &quot;account&quot;: {
+      &quot;BlockPublicAcls&quot;: false,
+      &quot;BlockPublicPolicy&quot;: false,
+      &quot;IgnorePublicAcls&quot;: false,
+      &quot;RestrictPublicBuckets&quot;: false
+    },
+    &quot;bucket&quot;: {
+      &quot;BlockPublicAcls&quot;: false,
+      &quot;BlockPublicPolicy&quot;: false,
+      &quot;IgnorePublicAcls&quot;: false,
+      &quot;RestrictPublicBuckets&quot;: false
+    }
+  },
+  &quot;read_errors&quot;: {}
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status fail">FAIL</span><span>MEDIUM</span></div>
+<h3>S3 default encryption</h3><div class="resource">medtech-demo-patient-data / us-east-1</div>
+<p>Default encryption does not meet the project KMS baseline; SSE-S3 is still encryption.</p><p class="next"><strong>Next step:</strong> Review KMS key policy/cost, then configure SSE-KMS or DSSE-KMS; assess existing objects separately.</p>
+<details><summary>Evidence</summary><pre>{
+  &quot;default_algorithms&quot;: [
+    &quot;AES256&quot;
+  ]
+}</pre></details></article><article class="finding"><div class="finding-head"><span class="status not_applicable">NOT_APPLICABLE</span><span>INFORMATIONAL</span></div>
+<h3>Root and console-user MFA</h3><div class="resource">service-backend / global</div>
+<p>No console login profile observed; API-key/STS MFA enforcement is outside scope.</p><p class="next"><strong>Next step:</strong> No remediation proposed by this check.</p>
+<details><summary>Evidence</summary><pre>{}</pre></details></article><footer>Read-only inspection. No remediation was applied. Evidence and resource identifiers require appropriate access controls.</footer></main></body></html>

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medtech-compliance-checker"
+version = "2.0.0"
+description = "Read-only, scoped AWS security baseline checker with offline demos"
+requires-python = ">=3.12"
+dependencies = ["boto3>=1.40,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "jsonschema>=4,<5", "cfn-lint>=1,<2"]
+
+[project.scripts]
+medtech-check = "medtech.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["medtech*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.package-data]
+medtech = ["fixtures/*.json"]

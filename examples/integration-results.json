@@ -1,0 +1,25 @@
+{
+  "demos": [
+    {
+      "scenario": "compliant",
+      "exit_code": 0,
+      "byte_identical_to_examples": true
+    },
+    {
+      "scenario": "misconfigured",
+      "exit_code": 1,
+      "byte_identical_to_examples": true
+    },
+    {
+      "scenario": "incomplete",
+      "exit_code": 2,
+      "byte_identical_to_examples": true
+    }
+  ],
+  "isolated_lambda_package": "PASS",
+  "cfn_lint": "PASS",
+  "aws_deployment": "NOT_PERFORMED",
+  "real_sns_email": "NOT_SENT",
+  "wheel_install_in_fresh_environment": "PASS",
+  "wheel_demos_outside_source_tree": "PASS"
+}

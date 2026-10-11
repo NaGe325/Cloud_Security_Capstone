@@ -1,0 +1,4 @@
+User-uploaded slide-design-system.skill
+Referenced conversation: 6acbe87a-46b4-83ea-9738-66119543c60e
+SHA256 of original archive: f21ceb8f9389d5e2343bf69acc8cbfa049e795192ab76ee5f04fb9aebb776c8e
+Read for future slides; no slide deck created.

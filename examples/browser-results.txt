@@ -1,0 +1,2 @@
+PASS: three scenarios, all tabs, JSON and HTML downloads; viewports 1400, 768 and 360 px; no horizontal overflow or JavaScript errors.
+Native Google Slides: all 12 slides visually inspected; zero structural issues.
