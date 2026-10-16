@@ -5,7 +5,7 @@ Authors: Charlotte Zhang and Nana Ge. Route: Cloud Security Engineer, Option A.
 ## Included
 
 - `slides/MedTech-Security-Baseline-Slides.pdf`: 12-slide presentation.
-- `slides/MedTech-Security-Baseline-Slides.pptx`: editable deck with speaker notes.
+- `slides/original/MedTech-Security-Baseline-Slides.pdf`: preserved original source.
 - `docs/SPEAKER_NOTES.md`: English script, timing and source notes.
 - `demo/index.html`: self-contained local demonstration with bundled reports.
 - `medtech/`, `tests/`, `template.yaml`, `deploy/`: implementation, validation and cloud deployment design.
@@ -20,7 +20,7 @@ Charlotte Zhang and Nana Ge
 
 Attached are our 12-slide presentation and project package. The project implements five AWS configuration checks, reproducible offline scenarios, structured reports, and a Lambda/EventBridge/SNS/S3 deployment design. The demo uses synthetic fixtures with boto3 Stubber. Real AWS deployment, scheduling and email delivery have not been performed. Time savings and cloud costs are explicitly labeled scenario estimates. The package includes speaker notes, validation records, references and an AI-use disclosure.
 
-To review offline, extract the ZIP and open demo/index.html. For executable scanner demos, follow README.md. The PDF and PPTX are in slides/.
+To review offline, extract the ZIP and open demo/index.html. For executable scanner demos, follow README.md. The updated original PDF is in slides/.
 
 ## Student completion before upload
 

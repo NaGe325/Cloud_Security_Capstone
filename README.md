@@ -8,7 +8,7 @@ CMU Cloud Security Engineer — Option A. Python 3.12+, boto3, five technical co
 
 Authors: **Charlotte Zhang and Nana Ge**. Final route: **Cloud Security Engineer, Option A**. See [submission guide](docs/SUBMISSION.md) and [rubric coverage](docs/RUBRIC_COVERAGE.md).
 
-- [Final English slides PDF](slides/MedTech-Security-Baseline-Slides.pdf) and [editable PPTX with notes](slides/MedTech-Security-Baseline-Slides.pptx)
+- [Final English slides PDF](slides/MedTech-Security-Baseline-Slides.pdf), updated directly from the original 12-slide PDF; [unchanged original source](slides/original/MedTech-Security-Baseline-Slides.pdf)
 - [Complete project ZIP](downloads/medtech-compliance-checker.zip) and [SHA-256 checksum](downloads/medtech-compliance-checker.zip.sha256)
 - [English speaker notes](docs/SPEAKER_NOTES.md)
 - [Local demo instructions](demo/README.md)
@@ -33,7 +33,7 @@ Each run writes `<scenario>.json`, `.md`, `.html` and `.delivery.json`. The last
 
 [Hosted recorded demo](https://medtech-security-checker-demo.nage32519.chatgpt.site/) · [Earlier Google Slides version](https://docs.google.com/presentation/d/11W8AE5Fn5un-FhWMLC6scesZQe5N5m9bFQFXPzMcSjA/edit)
 
-**Use the repository PDF/PPTX for this submission.** The earlier Google Slides and hosted website were not edited in this update. For a reliable demo, extract the ZIP and open `demo/index.html`.
+**Use the updated repository PDF for this submission.** Only slides 1, 6, 9 and 10 have focused edits; the other eight pages retain the original content streams and render identically. The earlier Google Slides and hosted website were not edited in this update. For a reliable demo, extract the ZIP and open `demo/index.html`.
 
 The website replays recorded Python outputs. It does not execute Python or call AWS. For a local backup, open `demo/index.html`; its data and reports are included. The hosted site retains owner-private access, so presenting while signed in or using the local backup is currently necessary.
 

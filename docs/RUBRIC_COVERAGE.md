@@ -15,7 +15,7 @@ Primary guide: [Cloud Security Engineer](https://github.com/georgewerbacher/cmu-
 | Input, processing, output demonstration | demo/, three CLI scenarios | 8–9 | Local fallback avoids hosted access dependency |
 | Value, cost and success metrics | value_model.py, value-model.json, VALUE_AND_COST.md | 10 | Production targets distinct from measurements |
 | Future enhancements / scaling | README limits, QA_PREPARATION.md | 11 | No broad coverage claims |
-| 10–12 slides, names and context | slides/MedTech-Security-Baseline-Slides.pptx + PDF | 1–12 | Rehearse actual timing |
+| 10–12 slides, names and context | Updated original PDF, preserved source, English notes | 1–12 | Rehearse actual timing |
 
 ## Rubric evidence
 

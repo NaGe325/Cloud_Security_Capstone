@@ -6,7 +6,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 # Explicit inclusion avoids accidentally distributing local credentials or old ZIPs.
 FOLDERS = ("medtech", "tests", "docs", "demo", "examples", "deploy", "slides", "scripts", ".github")
-FILES = ("README.md", ".gitignore", "config.example.json", "pyproject.toml", "requirements.txt", "requirements-dev.lock", "report.schema.json", "template.yaml")
+FILES = ("README.md", ".gitignore", "config.example.json", "pyproject.toml", "requirements.txt", "requirements-dev.lock", "requirements-slides.txt", "report.schema.json", "template.yaml")
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", "package", "node_modules", ".DS_Store"}
 output = ROOT / "downloads/medtech-compliance-checker.zip"
 paths = [ROOT / name for name in FILES if (ROOT / name).is_file()]
