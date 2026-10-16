@@ -1,0 +1,54 @@
+{
+  "prepared_date": "2026-10-16",
+  "tool": "OpenAI Codex desktop",
+  "model_record": "GPT-6-based session identity; exact deployed identifier/build unavailable",
+  "historical_completeness": "INCOMPLETE",
+  "entries": [
+    {
+      "exchange": "C1",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "completion and preservation of original slides",
+      "reply_sha256": "e79fb252479add1366cc89065472b6fb257fb03020a84f9cc94140898f9b2471",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C1",
+      "translated_final_reply": "docs/ai-use/AI_RESPONSE.md"
+    },
+    {
+      "exchange": "C2",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "recording manuscript and walkthrough",
+      "reply_sha256": "1b8a09a9f17a88374cb3f962c37cc2dcbf9f9ec040f56b2de0dc16aa1b13a5b3",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C2",
+      "translated_final_reply": "docs/ai-use/RECORDING_RESPONSE.md"
+    },
+    {
+      "exchange": "C3",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "remove Chinese rehearsal material",
+      "reply_sha256": "b3cf7b75c33d97a3f7f2e8b0c57f25502b6b3f096bf2c09934fff50161b6d525",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C3",
+      "translated_final_reply": "docs/ai-use/CLEANUP_RESPONSE.md"
+    },
+    {
+      "exchange": "C4",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "prepare evidence-based AI-use appendix",
+      "reply_sha256": "a5ec640d97a006c1a0065bb79ff2cad112ecec3b1a784734c09d6232f2ac6bd7",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C4",
+      "translated_final_reply": "docs/ai-use/APPENDIX_RESPONSE.md"
+    }
+  ],
+  "nana_original": {
+    "baseline_commit": "79d6c6e6a4a57d46495c8e77dea893503977b12e",
+    "baseline_author_date": "2026-10-11",
+    "evidence_record": "docs/ai-use/NANA_RECORD.md",
+    "design_provenance": "docs/slide-design-system/SOURCE.txt",
+    "historical_tool_model": "NOT_PROVIDED",
+    "original_prompts": "NOT_PROVIDED",
+    "complete_original_responses": "NOT_PROVIDED"
+  },
+  "record_language": "English translations; original-language text excluded from current package"
+}

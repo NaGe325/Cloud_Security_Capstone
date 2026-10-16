@@ -1,5 +1,7 @@
+For the complete English read-aloud script, see [RECORDING_SCRIPT_EN.md](RECORDING_SCRIPT_EN.md). For demonstration actions, see [DEMO.md](DEMO.md). The notes below remain a compact slide reference.
+
 ## Slide 1
-Introduce the MedTech AI scenario and the five-control technical baseline. The project is implemented in Python with boto3. Today’s demonstration is entirely offline: no real account scans, deployments, resource changes or email. Explain that PASS means the configured technical baseline passed within the stated scope, not HIPAA compliance. Transition to the operational problem. Suggested time: 1 minute.
+Introduce Charlotte Zhang and Nana Ge, then the MedTech AI scenario and the five-control technical baseline. The project is implemented in Python with boto3. Today’s demonstration is entirely offline: no real account scans, deployments, resource changes or email. Explain that PASS means the configured technical baseline passed within the stated scope, not HIPAA compliance. Transition to the operational problem. Suggested time: 1 minute.
 
 ## Slide 2
 Explain how AI infrastructure introduces repeatable configuration questions around access, identity, network ingress and audit logging. The tool supports human review with evidence rather than replacing a full security assessment. Avoid declaring that any single configuration necessarily constitutes a breach. Transition: repeatability is the automation opportunity. Suggested time: 1 minute.
@@ -26,10 +28,23 @@ Open the linked interactive demo. Start with Misconfigured: inspect root MFA, it
 This screenshot is from the newly generated HTML report, not a mocked visual. Findings are prioritized by failure severity, with evidence and recommended next steps. The actual SNS preview includes summary counts and a report reference, not the detailed resource evidence. No email has been sent. Open the full downloadable HTML for readable details. Transition to validation. Suggested time: 1 minute.
 
 ## Slide 10
-Report only measured evidence: 88 automated tests passed, three reproducible scenarios, five control groups, zero real AWS deployments. Tests cover rule edges, exceptions, pagination, identity safety and mocked delivery. Browser checks cover scenario changes, tabs, downloads and narrow layouts. Offline validation does not prove live IAM effectiveness, production performance, scheduling or email delivery. No fixed cost or time-savings claim is made. Suggested time: 1 minute.
+Report the measured offline evidence: 88 tests pass, three reproducible scenarios, five control groups, zero real AWS deployments. Tests and output comparisons do not prove production IAM, scale, scheduling or email.
+
+Then explain the illustrative economics. Assume fifteen manual minutes per run, including five minutes to interpret the evidence. Automation retains five minutes of human review. Thirty runs times ten minutes releases three hundred minutes, or five hours per month, a 66.7 percent reduction for these five checks. At an assumed sixty dollars per hour, this is three hundred dollars of staff capacity, not measured savings or a payroll reduction. Setup and maintenance are excluded. Human timing is unmeasured.
+
+The cloud model assumes one small account and one bucket in us-east-1, thirty daily runs, 256 MB Arm and thirty seconds billed duration per run. Base model subtotal is $0.012799. With three custom metrics, one dashboard and two alarms, it is $4.112799. Round up to the next cent for planning budgets of $0.02 and $4.12. Free-tier credits, taxes, existing EC2/RDS workloads, extra transfer, retries and labor are excluded. The thirty seconds is an assumption; local synthetic timings are not AWS performance. A pilot must measure actual cost, duration and review effort. Full arithmetic, assumptions, sensitivity and AWS pricing sources are in VALUE_AND_COST.md. Suggested time: 2 minutes.
 
 ## Slide 11
 Prioritize a small authorized AWS pilot before broadening scope. Validate read permissions, KMS policies, output delivery, quotas and actual costs. Then add schedule-aware liveness, deduplication and more AI-specific controls. Expansion to more accounts and regions requires explicit scope and policies. Any remediation should involve human approval. Suggested time: 1 minute.
 
 ## Slide 12
 Close with the core outcome: five technical controls, reproducible evidence, honest uncertainty and reviewable reports. The project includes runnable code, test results, fixtures, cloud deployment configuration and this demonstration link. Reiterate that it is not a HIPAA certification and has not been deployed to AWS. Invite questions or reopen the demo. Suggested time: 1 minute.
+
+## Sources and preparation
+
+- Course route and rubric: https://github.com/georgewerbacher/cmu-cloud-sec-documentation/blob/main/pages/capstone/capstone_engineer.md
+- Implementation and synthetic report evidence: README.md, medtech/checks.py, examples/misconfigured.json and examples/submission-validation.json.
+- Slide 10 rates: https://aws.amazon.com/lambda/pricing/ ; https://aws.amazon.com/s3/pricing/ ; https://aws.amazon.com/kms/pricing/ ; https://aws.amazon.com/sns/faqs/ ; https://aws.amazon.com/cloudwatch/pricing/ ; https://aws.amazon.com/sqs/pricing/ ; https://aws.amazon.com/eventbridge/pricing/ . Reviewed October 16, 2026.
+- Security design alignment: https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/ and WELL_ARCHITECTED.md.
+- Rehearse the full original deck and local demo for 15–20 minutes. Keep the demo below five minutes. Suggested slide times total approximately 17 minutes with the revised value explanation; adjust to leave room for questions.
+- Before submitting, review AI_USE.md and append earlier AI records required by the syllabus.

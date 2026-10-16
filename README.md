@@ -6,10 +6,16 @@ CMU Cloud Security Engineer — Option A. Python 3.12+, boto3, five technical co
 
 ## Presentation and downloads
 
-- [English slides PDF](slides/MedTech-Security-Baseline-Slides.pdf)
+Authors: **Charlotte Zhang and Nana Ge**. Final route: **Cloud Security Engineer, Option A**. See [submission guide](docs/SUBMISSION.md) and [rubric coverage](docs/RUBRIC_COVERAGE.md).
+
+- [Final English slides PDF](slides/MedTech-Security-Baseline-Slides.pdf), updated directly from the original 12-slide PDF; [unchanged original source](slides/original/MedTech-Security-Baseline-Slides.pdf)
 - [Complete project ZIP](downloads/medtech-compliance-checker.zip) and [SHA-256 checksum](downloads/medtech-compliance-checker.zip.sha256)
 - [English speaker notes](docs/SPEAKER_NOTES.md)
 - [Local demo instructions](demo/README.md)
+
+## English presentation script
+
+Use the [English read-aloud script](docs/RECORDING_SCRIPT_EN.md) for the recorded presentation. [Speaker notes](docs/SPEAKER_NOTES.md) and the [English demo walkthrough](docs/DEMO.md) provide timing and demonstration guidance.
 
 ## Run locally without an AWS account
 
@@ -29,7 +35,9 @@ Expected exit codes: **0** compliant, **1** misconfigured, **2** incomplete. Cod
 
 Each run writes `<scenario>.json`, `.md`, `.html` and `.delivery.json`. The last contains delivery state and an SNS preview. `examples/` contains actual generated outputs. `requirements.txt` is sufficient for runtime; `requirements-dev.lock` adds pinned test and template-validation dependencies. SAM, Docker and AWS CLI are not needed for offline work.
 
-[Interactive demo](https://medtech-security-checker-demo.nage32519.chatgpt.site/) · [English slides](https://docs.google.com/presentation/d/11W8AE5Fn5un-FhWMLC6scesZQe5N5m9bFQFXPzMcSjA/edit)
+[Hosted recorded demo](https://medtech-security-checker-demo.nage32519.chatgpt.site/) · [Earlier Google Slides version](https://docs.google.com/presentation/d/11W8AE5Fn5un-FhWMLC6scesZQe5N5m9bFQFXPzMcSjA/edit)
+
+**Use the updated repository PDF for this submission.** Only slides 1, 6, 9 and 10 have focused edits; the other eight pages retain the original content streams and render identically. The earlier Google Slides and hosted website were not edited in this update. For a reliable demo, extract the ZIP and open `demo/index.html`.
 
 The website replays recorded Python outputs. It does not execute Python or call AWS. For a local backup, open `demo/index.html`; its data and reports are included. The hosted site retains owner-private access, so presenting while signed in or using the local backup is currently necessary.
 
@@ -69,6 +77,18 @@ cfn-lint template.yaml
 ```
 
 The current suite has 88 passing tests. Tests block AWS HTTP transport and validate boto3 request/response contracts with botocore Stubber. See `docs/VALIDATION.md` for measured results and limitations. `docs/DEMO.md` contains the English presentation walkthrough.
+
+## Submission support and operational value
+
+- [Value, time and cost model](docs/VALUE_AND_COST.md): explicit assumptions, rate sources, sensitivity and pilot targets. `python scripts/value_model.py` reproduces the numbers in [value-model.json](examples/value-model.json).
+- [Current offline timings](examples/offline-benchmark.json): five local synthetic executions per scenario; not live AWS latency. Reproduce with `python scripts/benchmark_offline.py`.
+- [Instructor environment relationship](docs/COURSE_ENVIRONMENT.md): distinguishes Terraform source observations from independent synthetic fixtures.
+- [Well-Architected alignment](docs/WELL_ARCHITECTED.md), [pilot runbook](docs/PILOT_RUNBOOK.md) and [Q&A preparation](docs/QA_PREPARATION.md).
+- [AI assistance disclosure](docs/AI_USE.md): includes English translations of selected current-session prompts and final replies, a separate original-project record for Nana, and explicit historical-record gaps.
+
+Illustrative economics: assume 15 manual minutes vs 5 human-review minutes per daily run. Thirty runs release **5 hours/month**, or **$300 of staff capacity at an assumed $60/hour**, excluding setup and maintenance. This is not measured savings. Under the declared small us-east-1 scenario, round-up planning budgets are **$0.02/month base** or **$4.12/month with optional monitoring**, before credits and exclusions. These are not actual bills or price guarantees.
+
+Run `python scripts/verify_submission.py` after installing the project. It checks the regression suite, SAM lint, exact scenario reports and cost-model consistency without AWS access. Current evidence is saved under `examples/`. CI uses the same command on Python 3.12; a workflow file alone does not mean a hosted CI run has occurred. `python scripts/package_submission.py` rebuilds the portable ZIP and checksum without VCS data, environments or credentials.
 
 ## Real AWS scanning — only after explicit authorization
 

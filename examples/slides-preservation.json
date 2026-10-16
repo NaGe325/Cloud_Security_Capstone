@@ -1,0 +1,27 @@
+{
+  "source_commit": "79d6c6e6a4a57d46495c8e77dea893503977b12e",
+  "source_sha256": "0bb752430fabd16d4c689507a5a79ffae270471841b8b16bf804cae2d0a8b7eb",
+  "final_sha256": "3641a06c42644fbdcf8e72391b69b6f4dc29fa8e972ed6b07d195f205cd7eac2",
+  "slide_count": 12,
+  "changed_slides": [
+    1,
+    6,
+    9,
+    10
+  ],
+  "unchanged_content_streams_verified": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    11,
+    12
+  ],
+  "removed_text_groups": {
+    "6": 8,
+    "10": 15
+  },
+  "method": "targeted PDF text edits preserving original page artwork/layout"
+}
