@@ -1,3 +1,5 @@
+For the complete read-aloud script and exact demo actions, see [RECORDING_WALKTHROUGH.md](RECORDING_WALKTHROUGH.md). The notes below remain a compact slide reference.
+
 ## Slide 1
 Introduce Charlotte Zhang and Nana Ge, then the MedTech AI scenario and the five-control technical baseline. The project is implemented in Python with boto3. Today’s demonstration is entirely offline: no real account scans, deployments, resource changes or email. Explain that PASS means the configured technical baseline passed within the stated scope, not HIPAA compliance. Transition to the operational problem. Suggested time: 1 minute.
 

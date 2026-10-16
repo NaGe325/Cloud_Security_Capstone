@@ -13,6 +13,10 @@ Authors: **Charlotte Zhang and Nana Ge**. Final route: **Cloud Security Engineer
 - [English speaker notes](docs/SPEAKER_NOTES.md)
 - [Local demo instructions](demo/README.md)
 
+## Recording walkthrough
+
+Use the [complete recording script](docs/RECORDING_WALKTHROUGH.md) for English read-aloud narration, Chinese click-by-click directions, demo order, timing and recovery lines. A [clean English manuscript](docs/RECORDING_SCRIPT_EN.md) is available for reading during recording. [Changes from the original project](docs/CHANGES_FROM_NANA.md) distinguishes original implementation from completion work.
+
 ## Run locally without an AWS account
 
 Extract the project and enter its directory. Installing dependencies requires a Python package source; the demos then run offline without AWS credentials.

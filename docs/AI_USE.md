@@ -25,3 +25,11 @@ The complete final conversational response for this revision is saved in [AI_RES
 The original repository already includes a referenced AI conversation/design-system source and a generated presentation. This revision cannot reconstruct earlier exact prompts, complete responses or exact tool versions. The review conversation before this implementation also informed the gap list. Students must attach their original relevant records when submitting AI-assisted content under the syllabus policy. Do not describe this appendix as a complete history until those records have been reconciled.
 
 Student review still required: confirm the report interpretations, estimates, sources, contribution descriptions and presentation claims. No claim is made that students have already performed that review. No full HIPAA compliance, live AWS deployment or guaranteed score is claimed.
+
+## Recording guide follow-up, October 16, 2026
+
+Exact prompt:
+
+> 你给我生成稿子 walk through 包括怎么展示全部给我生成 一步一步带我走 /还有一个问题，你在nana的基础上改了什么
+
+Generated material: RECORDING_SCRIPT_EN.md (clean read-aloud manuscript), RECORDING_WALKTHROUGH.md (full manuscript, actions and timing) and CHANGES_FROM_NANA.md (verified diff explanation), plus documentation links. No scanner, tests, demo, template or slide content changed in this follow-up. The complete final conversational response is saved in RECORDING_RESPONSE.md. Earlier AI records remain subject to the record boundary above.
