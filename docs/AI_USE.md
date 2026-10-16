@@ -18,6 +18,12 @@ Source: [95-746 Cloud Security syllabus](https://docs.google.com/document/d/1R0i
 
 ## 2. Assistance associated with Charlotte's October 16 session
 
+### Formal English disclosure
+
+Charlotte Zhang used OpenAI Codex to review the existing capstone repository against the course requirements and assist with preparing the final submission. Assistance included targeted revisions to the original presentation, supporting documentation, an illustrative time-and-cost analysis, an English recording script, offline validation, and submission packaging. The original security-checking implementation and existing test suite were retained. AI-assisted materials were checked through the verification steps documented below. The work did not include a live AWS deployment or actual SNS/email delivery. The exact deployed model version was not available in the session record.
+
+### Tool and scope record
+
 | Item | Available record |
 |---|---|
 | Tool | OpenAI Codex desktop |
@@ -54,7 +60,7 @@ A separate [Nana historical record](ai-use/NANA_RECORD.md) gathers the available
 
 ## 4. Exact prompt and response register
 
-The following are exact student prompts for the implementation and recording work visible in this session. Chinese wording is retained because the syllabus asks for exact prompts. English descriptions are summaries, not replacements for those prompts.
+The following are exact student prompts for the implementation and recording work visible in this session. Chinese wording is retained because the syllabus asks for exact prompts. English translations are edited for readability and labeled as translations. They do not replace the original prompts or change the historical record.
 
 ### Exchange C1: Complete the existing repository
 
@@ -62,9 +68,17 @@ The following are exact student prompts for the implementation and recording wor
 
 > 好的 现在给我补全剩下的内容 都在这个repo的基础上（这个repo完成老师要求了吧 我要拿100分）
 
+**English translation (edited for clarity):**
+
+> Please review the existing repository against the instructor's requirements and complete the remaining work using this repository as the foundation. Does it already satisfy the assignment requirements? My goal is to earn full marks.
+
 **Exact subsequent clarification:**
 
 > 原本有slides 是吗 那你就哦那个原版的 接着继续完成就可以的
+
+**English translation (edited for clarity):**
+
+> If the repository already includes a presentation, please use the original slides and continue completing the remaining work from that version.
 
 **Complete final conversational reply:** [AI_RESPONSE.md](ai-use/AI_RESPONSE.md).
 
@@ -76,6 +90,10 @@ The following are exact student prompts for the implementation and recording wor
 
 > 你给我生成稿子 walk through 包括怎么展示全部给我生成 一步一步带我走 /还有一个问题，你在nana的基础上改了什么
 
+**English translation (edited for clarity):**
+
+> Please prepare a complete presentation script and a step-by-step walkthrough explaining what to show and how to demonstrate the project. Please also identify the changes you made to Nana's original work.
+
 **Complete final conversational reply:** [RECORDING_RESPONSE.md](ai-use/RECORDING_RESPONSE.md).
 
 **Material used in the current package:** `docs/RECORDING_SCRIPT_EN.md` and supporting English demo/slide notes. The Chinese working rehearsal files mentioned in the historical reply were removed later; their names in that reply describe the earlier exchange, not current file links.
@@ -86,6 +104,10 @@ The following are exact student prompts for the implementation and recording wor
 
 > 讲稿 没有那个中文的讲稿吧 有的话直接给我删掉 我要交作业的
 
+**English translation (edited for clarity):**
+
+> Please check whether the submission contains any Chinese-language presentation scripts. If it does, please remove them, as I am preparing the assignment for submission.
+
 **Complete final conversational reply:** [CLEANUP_RESPONSE.md](ai-use/CLEANUP_RESPONSE.md).
 
 **Material used:** removal of the Chinese/bilingual rehearsal guides; preservation of English narration and original-language AI disclosure records; refreshed ZIP and checksum. Core implementation and slide content did not change.
@@ -95,6 +117,10 @@ The following are exact student prompts for the implementation and recording wor
 **Exact prompt:**
 
 > 此前 AI 使用记录附录 你来给我写一个 nana的也给我写了！
+
+**English translation (edited for clarity):**
+
+> Please prepare an appendix documenting prior AI use, including a section for Nana's use of AI.
 
 **Complete final conversational reply:** [APPENDIX_RESPONSE.md](ai-use/APPENDIX_RESPONSE.md).
 
