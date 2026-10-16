@@ -1,6 +1,6 @@
 # English read-aloud script
 
-Read the narration paragraphs. Headings are directions, not spoken words. About 1,700 words including the optional CLI segment. Use RECORDING_WALKTHROUGH.md for the exact clicks.
+Read the narration paragraphs. Headings are directions, not spoken words. About 1,700 words including the optional CLI segment. Use DEMO.md for demonstration actions.
 
 
 ## Slide 1 — MedTech Security Baseline Checker

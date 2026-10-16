@@ -18,7 +18,7 @@ User clarification (exact):
 
 The final deliverable follows this clarification. An earlier full rebuild is a discarded local intermediate, excluded from the final package. Eight original pages remain unchanged, and only four receive focused text edits.
 
-The complete final conversational response for this revision is saved in [AI_RESPONSE.md](AI_RESPONSE.md). The complete generated artifacts are the files in this revision, including `scripts/update_original_slides.py` (exact slide changes), `docs/SPEAKER_NOTES.md` (complete speaking notes), `docs/`, the model script/output and the submitted deck. A Git patch preserves the complete source changes; it is not a substitute for earlier missing chat transcripts. Tool checks establish the stated offline behavior; they do not prove student understanding, production operation or a grade.
+The complete final conversational response for this revision is saved in [AI_RESPONSE.md](ai-use/AI_RESPONSE.md). The complete generated artifacts are the files in this revision, including `scripts/update_original_slides.py` (exact slide changes), `docs/SPEAKER_NOTES.md` (complete speaking notes), `docs/`, the model script/output and the submitted deck. A Git patch preserves the complete source changes; it is not a substitute for earlier missing chat transcripts. Tool checks establish the stated offline behavior; they do not prove student understanding, production operation or a grade.
 
 ## Earlier assistance and record boundary
 
@@ -32,4 +32,8 @@ Exact prompt:
 
 > 你给我生成稿子 walk through 包括怎么展示全部给我生成 一步一步带我走 /还有一个问题，你在nana的基础上改了什么
 
-Generated material: RECORDING_SCRIPT_EN.md (clean read-aloud manuscript), RECORDING_WALKTHROUGH.md (full manuscript, actions and timing) and CHANGES_FROM_NANA.md (verified diff explanation), plus documentation links. No scanner, tests, demo, template or slide content changed in this follow-up. The complete final conversational response is saved in RECORDING_RESPONSE.md. Earlier AI records remain subject to the record boundary above.
+Generated material: RECORDING_SCRIPT_EN.md (clean read-aloud manuscript), RECORDING_WALKTHROUGH.md (full manuscript, actions and timing) and CHANGES_FROM_NANA.md (verified diff explanation), plus documentation links. No scanner, tests, demo, template or slide content changed in this follow-up. The complete final conversational response is saved in [RECORDING_RESPONSE.md](ai-use/RECORDING_RESPONSE.md). Earlier AI records remain subject to the record boundary above.
+
+## Submission cleanup, October 16, 2026
+
+At the students' request, Chinese rehearsal guides, bilingual walkthrough instructions and a Chinese working change summary were removed from the current submission files. The English manuscript and notes remain. The original-language prompts and verbatim AI responses are retained in this disclosure and docs/ai-use/ for the syllabus AI-use appendix. References to removed working drafts in historical responses are records of that earlier exchange, not current file links. No core implementation or slide content changed during this cleanup.

@@ -7,8 +7,7 @@ Authors: Charlotte Zhang and Nana Ge. Route: Cloud Security Engineer, Option A.
 - `slides/MedTech-Security-Baseline-Slides.pdf`: 12-slide presentation.
 - `slides/original/MedTech-Security-Baseline-Slides.pdf`: preserved original source.
 - `docs/SPEAKER_NOTES.md`: compact English slide notes and sources.
-- `docs/RECORDING_WALKTHROUGH.md`: full English read-aloud script, Chinese screen actions and timing.
-- `docs/CHANGES_FROM_NANA.md`: exact changes from the original project.
+- `docs/RECORDING_SCRIPT_EN.md`: complete English read-aloud presentation script.
 - `demo/index.html`: self-contained local demonstration with bundled reports.
 - `medtech/`, `tests/`, `template.yaml`, `deploy/`: implementation, validation and cloud deployment design.
 - `docs/VALUE_AND_COST.md`, `WELL_ARCHITECTED.md`, `PILOT_RUNBOOK.md`, `QA_PREPARATION.md`: supporting calculations and technical explanations.

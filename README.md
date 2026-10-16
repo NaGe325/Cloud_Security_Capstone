@@ -13,9 +13,9 @@ Authors: **Charlotte Zhang and Nana Ge**. Final route: **Cloud Security Engineer
 - [English speaker notes](docs/SPEAKER_NOTES.md)
 - [Local demo instructions](demo/README.md)
 
-## Recording walkthrough
+## English presentation script
 
-Use the [complete recording script](docs/RECORDING_WALKTHROUGH.md) for English read-aloud narration, Chinese click-by-click directions, demo order, timing and recovery lines. A [clean English manuscript](docs/RECORDING_SCRIPT_EN.md) is available for reading during recording. [Changes from the original project](docs/CHANGES_FROM_NANA.md) distinguishes original implementation from completion work.
+Use the [English read-aloud script](docs/RECORDING_SCRIPT_EN.md) for the recorded presentation. [Speaker notes](docs/SPEAKER_NOTES.md) and the [English demo walkthrough](docs/DEMO.md) provide timing and demonstration guidance.
 
 ## Run locally without an AWS account
 

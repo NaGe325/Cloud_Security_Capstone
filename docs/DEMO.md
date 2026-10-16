@@ -1,6 +1,6 @@
 # English demo walkthrough
 
-For the complete video manuscript and exact button sequence, use [RECORDING_WALKTHROUGH.md](RECORDING_WALKTHROUGH.md).
+For the complete English video manuscript, use [RECORDING_SCRIPT_EN.md](RECORDING_SCRIPT_EN.md).
 
 Allocate about 3–4 minutes within the 12-slide, 15–20-minute presentation. Use the local backup as the default; slide 8 also links to the hosted replay. The hosted link currently requires the owner's signed-in session; for an offline backup, open `demo/index.html` from the extracted ZIP.
 
