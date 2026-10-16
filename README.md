@@ -84,7 +84,7 @@ The current suite has 88 passing tests. Tests block AWS HTTP transport and valid
 - [Current offline timings](examples/offline-benchmark.json): five local synthetic executions per scenario; not live AWS latency. Reproduce with `python scripts/benchmark_offline.py`.
 - [Instructor environment relationship](docs/COURSE_ENVIRONMENT.md): distinguishes Terraform source observations from independent synthetic fixtures.
 - [Well-Architected alignment](docs/WELL_ARCHITECTED.md), [pilot runbook](docs/PILOT_RUNBOOK.md) and [Q&A preparation](docs/QA_PREPARATION.md).
-- [AI assistance disclosure](docs/AI_USE.md): includes the current task prompt and response, plus the boundary for earlier unrecorded sessions.
+- [AI assistance disclosure](docs/AI_USE.md): includes exact current-session prompts and final replies, a separate original-project record for Nana, and explicit historical-record gaps.
 
 Illustrative economics: assume 15 manual minutes vs 5 human-review minutes per daily run. Thirty runs release **5 hours/month**, or **$300 of staff capacity at an assumed $60/hour**, excluding setup and maintenance. This is not measured savings. Under the declared small us-east-1 scenario, round-up planning budgets are **$0.02/month base** or **$4.12/month with optional monitoring**, before credits and exclusions. These are not actual bills or price guarantees.
 

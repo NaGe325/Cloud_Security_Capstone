@@ -12,7 +12,7 @@ Authors: Charlotte Zhang and Nana Ge. Route: Cloud Security Engineer, Option A.
 - `medtech/`, `tests/`, `template.yaml`, `deploy/`: implementation, validation and cloud deployment design.
 - `docs/VALUE_AND_COST.md`, `WELL_ARCHITECTED.md`, `PILOT_RUNBOOK.md`, `QA_PREPARATION.md`: supporting calculations and technical explanations.
 - `examples/submission-validation.json`, `examples/test-results-current.txt`, `examples/offline-benchmark.json`: current offline validation.
-- `docs/AI_USE.md`: AI assistance disclosure and transcript scope.
+- `docs/AI_USE.md` and `docs/ai-use/`: English AI-use appendix, exact current-session exchange records, and Nana historical-record status.
 
 ## Suggested Canvas text
 

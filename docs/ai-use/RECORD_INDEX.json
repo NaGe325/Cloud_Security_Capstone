@@ -1,0 +1,53 @@
+{
+  "prepared_date": "2026-10-16",
+  "tool": "OpenAI Codex desktop",
+  "model_record": "GPT-6-based session identity; exact deployed identifier/build unavailable",
+  "historical_completeness": "INCOMPLETE",
+  "entries": [
+    {
+      "exchange": "C1",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "completion and preservation of original slides",
+      "exact_prompt_location": "docs/AI_USE.md, Exchange C1",
+      "full_final_reply": "docs/ai-use/AI_RESPONSE.md",
+      "reply_sha256": "d77bb4a15dcf194e18891151935119ca17f11e9197969b181ff7ad52a465a11d",
+      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+    },
+    {
+      "exchange": "C2",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "recording manuscript and walkthrough",
+      "exact_prompt_location": "docs/AI_USE.md, Exchange C2",
+      "full_final_reply": "docs/ai-use/RECORDING_RESPONSE.md",
+      "reply_sha256": "9356e32a3f5467f66fab60e146a067236a8b6495f868a8624e40452070b2176e",
+      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+    },
+    {
+      "exchange": "C3",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "remove Chinese rehearsal material",
+      "exact_prompt_location": "docs/AI_USE.md, Exchange C3",
+      "full_final_reply": "docs/ai-use/CLEANUP_RESPONSE.md",
+      "reply_sha256": "07d02fee0e3358d2060861aca7bb4b315699c4050bc1afe0bd346e26eff471bd",
+      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+    },
+    {
+      "exchange": "C4",
+      "student_session": "Charlotte Zhang, October 16, 2026",
+      "scope": "prepare evidence-based AI-use appendix",
+      "exact_prompt_location": "docs/AI_USE.md, Exchange C4",
+      "full_final_reply": "docs/ai-use/APPENDIX_RESPONSE.md",
+      "reply_sha256": "53ccece6028cc9bfef74b7c450ce5a797036c656eb1ddecb8290abd1226bfb0f",
+      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+    }
+  ],
+  "nana_original": {
+    "baseline_commit": "79d6c6e6a4a57d46495c8e77dea893503977b12e",
+    "baseline_author_date": "2026-10-11",
+    "evidence_record": "docs/ai-use/NANA_RECORD.md",
+    "design_provenance": "docs/slide-design-system/SOURCE.txt",
+    "historical_tool_model": "NOT_PROVIDED",
+    "original_prompts": "NOT_PROVIDED",
+    "complete_original_responses": "NOT_PROVIDED"
+  }
+}
