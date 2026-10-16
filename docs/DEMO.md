@@ -1,6 +1,6 @@
 # English demo walkthrough
 
-Allocate about 3–4 minutes within the 12-slide, 15–20-minute presentation. Open the demo from slide 8 or 12. The hosted link currently requires the owner's signed-in session; for an offline backup, open `demo/index.html` from the extracted ZIP.
+Allocate about 3–4 minutes within the 12-slide, 15–20-minute presentation. Use the local backup as the default; slide 8 also links to the hosted replay. The hosted link currently requires the owner's signed-in session; for an offline backup, open `demo/index.html` from the extracted ZIP.
 
 ## Opening
 

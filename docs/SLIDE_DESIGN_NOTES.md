@@ -20,3 +20,7 @@ The source contains small internal differences: the detailed tokens add sizes be
 The user's later Google Slides reference supplies the native CMU cover/tartan assets, editable tables, diagrams, cards and typography. The output is a separate copy, preserving the reference's native object styles rather than forcing a different theme. This intentionally adapts the original token sizes and table-density limits where the supplied exemplar is already readable. All 12 rendered slides were visually inspected; the structural issue checker reported zero issues.
 
 The narrative, evidence and speaker notes are rewritten for this project's verified behavior. The existing report screenshot is replaced with an actual v2 HTML-report screenshot. Slides 8 and 12 link to the interactive demo. Unsupported fixed costs, scan times, savings and blanket coverage claims are removed. The original reference is unchanged.
+
+## October 16 submission revision
+
+Only the original PDF was available locally; the earlier Google Slides could not be read through the connected account. The final 12-slide deck is rebuilt with native editable text, tables and architecture connections. The original CMU cover and tartan images are reused unchanged. Open Sans, the 16:9 canvas and the navy/red palette are preserved. The earlier online deck and website remain unchanged. The final slide 9 uses readable native report fields derived from the committed synthetic JSON. PDF conversion uses LibreOffice, while PPTX and PNGs use Artifact Tool.

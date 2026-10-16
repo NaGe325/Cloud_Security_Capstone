@@ -1,0 +1,60 @@
+{
+  "date_utc": "2026-10-16T17:33:00.085154+00:00",
+  "python": "3.12.15",
+  "scope": "offline tests, template lint and deterministic reports only",
+  "checks": [
+    {
+      "name": "pytest",
+      "exit_code": 0,
+      "log": "examples/test-results-current.txt"
+    },
+    {
+      "name": "cfn-lint",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "compliant",
+      "exit_code": 0,
+      "cli_exit_code": 0,
+      "expected_cli_exit_code": 0,
+      "byte_identical": {
+        "json": true,
+        "md": true,
+        "html": true,
+        "delivery.json": true
+      }
+    },
+    {
+      "name": "misconfigured",
+      "exit_code": 0,
+      "cli_exit_code": 1,
+      "expected_cli_exit_code": 1,
+      "byte_identical": {
+        "json": true,
+        "md": true,
+        "html": true,
+        "delivery.json": true
+      }
+    },
+    {
+      "name": "incomplete",
+      "exit_code": 0,
+      "cli_exit_code": 2,
+      "expected_cli_exit_code": 2,
+      "byte_identical": {
+        "json": true,
+        "md": true,
+        "html": true,
+        "delivery.json": true
+      }
+    },
+    {
+      "name": "value-model",
+      "exit_code": 0
+    }
+  ],
+  "cloud_deployment": "NOT_PERFORMED",
+  "real_notifications": "NOT_SENT",
+  "status": "PASS"
+}
