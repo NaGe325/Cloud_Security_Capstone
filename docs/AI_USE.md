@@ -32,12 +32,12 @@ Charlotte Zhang used OpenAI Codex to review the existing capstone repository aga
 | Inputs | Student-provided repository and course-guide links, syllabus, Canvas assignment information, and the existing project files |
 | Uses | Requirement review; focused additions to the original PDF; time/cost scenario calculations; explanatory documentation; English recording manuscript; offline verification and packaging helpers |
 | Extent of code changes | Added helper scripts and a CI workflow; did not change the original scanner, existing tests, demo application, SAM template or Lambda implementation |
-| Full final replies | Preserved in the linked exchange records below |
+| Final-reply translations | Preserved in the linked English exchange records below |
 | Generated material | The submitted files, together with Git history, preserve the actual code, prose, slide edits and calculations used in the revised project |
 
 The final PDF uses Nana's original 12-slide presentation directly. Only slides 1, 6, 9 and 10 received focused edits: author names, corrected Notify/Measure order, readable root-MFA evidence, and an explicitly illustrative time/cost explanation. The other eight pages retain the original content streams and rendered appearance. An earlier full rebuild was discarded and is not included in the final submission.
 
-The recording follow-up produced an English read-aloud manuscript. Chinese rehearsal guides and a bilingual working walkthrough were subsequently removed from the submission files at the student's request. The original-language prompts and final AI replies remain in this appendix as disclosure records; they are not rehearsal scripts.
+The recording follow-up produced an English read-aloud manuscript. Chinese rehearsal guides and a bilingual working walkthrough were subsequently removed from the submission files at the student's request. English translations of selected prompts and final AI replies are included below as disclosure records; the original-language text is excluded from this package.
 
 ## 3. Assistance associated with Nana's original project
 
@@ -58,75 +58,57 @@ The baseline repository includes a slide-design-system provenance file referring
 
 A separate [Nana historical record](ai-use/NANA_RECORD.md) gathers the available evidence and identifies the specific original records needed. No prompt has been invented to resemble what she might have asked, and no first-person declaration has been signed on her behalf.
 
-## 4. Exact prompt and response register
+## 4. English translations of selected prompts and responses
 
-The following are exact student prompts for the implementation and recording work visible in this session. Chinese wording is retained because the syllabus asks for exact prompts. English translations are edited for readability and labeled as translations. They do not replace the original prompts or change the historical record.
+The following are English translations of selected student prompts and assistant replies. All original-language text has been removed from this English-only package at the student's request. These translations are not verbatim original transcripts and do not replace the original records required by the syllabus. Earlier versions remain in Git history.
 
 ### Exchange C1: Complete the existing repository
-
-**Exact prompt:**
-
-> 好的 现在给我补全剩下的内容 都在这个repo的基础上（这个repo完成老师要求了吧 我要拿100分）
 
 **English translation (edited for clarity):**
 
 > Please review the existing repository against the instructor's requirements and complete the remaining work using this repository as the foundation. Does it already satisfy the assignment requirements? My goal is to earn full marks.
 
-**Exact subsequent clarification:**
-
-> 原本有slides 是吗 那你就哦那个原版的 接着继续完成就可以的
+**Subsequent clarification:**
 
 **English translation (edited for clarity):**
 
 > If the repository already includes a presentation, please use the original slides and continue completing the remaining work from that version.
 
-**Complete final conversational reply:** [AI_RESPONSE.md](ai-use/AI_RESPONSE.md).
+**English translation of the final conversational reply:** [AI_RESPONSE.md](ai-use/AI_RESPONSE.md).
 
 **Material used:** focused PDF edits, economic model, explanatory/supporting documentation, verification/packaging helpers, and the updated project ZIP. The grade request was not treated as evidence that a score could be guaranteed.
 
 ### Exchange C2: Recording manuscript and walkthrough
 
-**Exact prompt:**
-
-> 你给我生成稿子 walk through 包括怎么展示全部给我生成 一步一步带我走 /还有一个问题，你在nana的基础上改了什么
-
 **English translation (edited for clarity):**
 
 > Please prepare a complete presentation script and a step-by-step walkthrough explaining what to show and how to demonstrate the project. Please also identify the changes you made to Nana's original work.
 
-**Complete final conversational reply:** [RECORDING_RESPONSE.md](ai-use/RECORDING_RESPONSE.md).
+**English translation of the final conversational reply:** [RECORDING_RESPONSE.md](ai-use/RECORDING_RESPONSE.md).
 
 **Material used in the current package:** `docs/RECORDING_SCRIPT_EN.md` and supporting English demo/slide notes. The Chinese working rehearsal files mentioned in the historical reply were removed later; their names in that reply describe the earlier exchange, not current file links.
 
 ### Exchange C3: Remove Chinese rehearsal material
 
-**Exact prompt:**
-
-> 讲稿 没有那个中文的讲稿吧 有的话直接给我删掉 我要交作业的
-
 **English translation (edited for clarity):**
 
 > Please check whether the submission contains any Chinese-language presentation scripts. If it does, please remove them, as I am preparing the assignment for submission.
 
-**Complete final conversational reply:** [CLEANUP_RESPONSE.md](ai-use/CLEANUP_RESPONSE.md).
+**English translation of the final conversational reply:** [CLEANUP_RESPONSE.md](ai-use/CLEANUP_RESPONSE.md).
 
-**Material used:** removal of the Chinese/bilingual rehearsal guides; preservation of English narration and original-language AI disclosure records; refreshed ZIP and checksum. Core implementation and slide content did not change.
+**Material used:** removal of the Chinese/bilingual rehearsal guides; preservation of English narration and, at that stage, original-language AI disclosure records (subsequently translated for this package); refreshed ZIP and checksum. Core implementation and slide content did not change.
 
 ### Exchange C4: Prepare this appendix, including Nana's section
-
-**Exact prompt:**
-
-> 此前 AI 使用记录附录 你来给我写一个 nana的也给我写了！
 
 **English translation (edited for clarity):**
 
 > Please prepare an appendix documenting prior AI use, including a section for Nana's use of AI.
 
-**Complete final conversational reply:** [APPENDIX_RESPONSE.md](ai-use/APPENDIX_RESPONSE.md).
+**English translation of the final conversational reply:** [APPENDIX_RESPONSE.md](ai-use/APPENDIX_RESPONSE.md).
 
 **Material used:** this appendix, Nana's evidence-based historical section, and the record index. Historical gaps remain disclosed rather than filled with reconstructed prompts.
 
-These records preserve the selected exact requests and full final conversational replies used for the documented revisions. They are not an export of every earlier advisory exchange, progress update, tool trace, or Nana's historical sessions. The complete generated files are available in the project, but generated files and a Git patch are not substitutes for missing original chat transcripts.
+These records provide English translations of selected requests and final conversational replies used for the documented revisions. They are not an export of every earlier advisory exchange, progress update, tool trace, or Nana's historical sessions. The complete generated files are available in the project, but generated files and a Git patch are not substitutes for missing original chat transcripts.
 
 ## 5. Verification performed during the assisted revision
 

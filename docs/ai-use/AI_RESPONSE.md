@@ -1,13 +1,15 @@
-# Complete final response for this revision
+# English translation: final response for the project revision
 
-已按你的意思，**在原版 12 页 slides 上补全**，只修改第 1、6、9、10 页，其余 8 页原样保留。
+This is an English translation, not the verbatim original response. File references are relative to this record.
 
-已补姓名、流程顺序、关键证据、时间与成本分析，以及讲稿、答辩准备和评分标准对照。Python 3.12 的 **88 项测试、模板检查和三种场景报告比对均通过**。
+The work has been completed using the original 12-slide presentation. Only slides 1, 6, 9 and 10 were modified; the other eight slides were preserved.
 
-修改已放入[草稿 PR #1](https://github.com/NaGe325/Cloud_Security_Capstone/pull/1)，需要 Nana 合并后才会进入原仓库主分支。
+The updates include student names, workflow order, key evidence, time and cost analysis, speaker notes, Q&A preparation and a rubric mapping. All 88 tests on Python 3.12, the template check and comparisons of reports for all three scenarios passed.
 
-[完整提交包](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/downloads/medtech-compliance-checker.zip>)
+The changes are available in [draft PR #1](https://github.com/NaGe325/Cloud_Security_Capstone/pull/1). Nana needs to merge the PR before they appear on the original repository's main branch.
 
-:codex-file-citation{path="/Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/slides/MedTech-Security-Baseline-Slides.pdf" purpose="output"}
+[Complete submission package](../../downloads/medtech-compliance-checker.zip)
 
-提交前还需要你们**排练、补齐此前 AI 使用记录，并上传 Canvas**。这些材料已按 Engineer 要求补强，但 100 分仍取决于老师评分和展示表现。
+[Updated presentation](../../slides/MedTech-Security-Baseline-Slides.pdf)
+
+Before submission, you still need to rehearse, complete the earlier AI-use records and upload the deliverables to Canvas. The materials have been strengthened against the Engineer requirements, but full marks depend on the instructor's assessment and the presentation.

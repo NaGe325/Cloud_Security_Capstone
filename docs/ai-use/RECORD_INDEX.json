@@ -8,37 +8,37 @@
       "exchange": "C1",
       "student_session": "Charlotte Zhang, October 16, 2026",
       "scope": "completion and preservation of original slides",
-      "exact_prompt_location": "docs/AI_USE.md, Exchange C1",
-      "full_final_reply": "docs/ai-use/AI_RESPONSE.md",
-      "reply_sha256": "d77bb4a15dcf194e18891151935119ca17f11e9197969b181ff7ad52a465a11d",
-      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+      "reply_sha256": "e79fb252479add1366cc89065472b6fb257fb03020a84f9cc94140898f9b2471",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C1",
+      "translated_final_reply": "docs/ai-use/AI_RESPONSE.md"
     },
     {
       "exchange": "C2",
       "student_session": "Charlotte Zhang, October 16, 2026",
       "scope": "recording manuscript and walkthrough",
-      "exact_prompt_location": "docs/AI_USE.md, Exchange C2",
-      "full_final_reply": "docs/ai-use/RECORDING_RESPONSE.md",
-      "reply_sha256": "9356e32a3f5467f66fab60e146a067236a8b6495f868a8624e40452070b2176e",
-      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+      "reply_sha256": "1b8a09a9f17a88374cb3f962c37cc2dcbf9f9ec040f56b2de0dc16aa1b13a5b3",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C2",
+      "translated_final_reply": "docs/ai-use/RECORDING_RESPONSE.md"
     },
     {
       "exchange": "C3",
       "student_session": "Charlotte Zhang, October 16, 2026",
       "scope": "remove Chinese rehearsal material",
-      "exact_prompt_location": "docs/AI_USE.md, Exchange C3",
-      "full_final_reply": "docs/ai-use/CLEANUP_RESPONSE.md",
-      "reply_sha256": "07d02fee0e3358d2060861aca7bb4b315699c4050bc1afe0bd346e26eff471bd",
-      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+      "reply_sha256": "b3cf7b75c33d97a3f7f2e8b0c57f25502b6b3f096bf2c09934fff50161b6d525",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C3",
+      "translated_final_reply": "docs/ai-use/CLEANUP_RESPONSE.md"
     },
     {
       "exchange": "C4",
       "student_session": "Charlotte Zhang, October 16, 2026",
       "scope": "prepare evidence-based AI-use appendix",
-      "exact_prompt_location": "docs/AI_USE.md, Exchange C4",
-      "full_final_reply": "docs/ai-use/APPENDIX_RESPONSE.md",
-      "reply_sha256": "53ccece6028cc9bfef74b7c450ce5a797036c656eb1ddecb8290abd1226bfb0f",
-      "record_boundary": "selected final conversational reply; not full tool/progress transcript"
+      "reply_sha256": "a5ec640d97a006c1a0065bb79ff2cad112ecec3b1a784734c09d6232f2ac6bd7",
+      "record_boundary": "English translation of selected prompt and final reply; not verbatim original transcript",
+      "translated_prompt_location": "docs/AI_USE.md, Exchange C4",
+      "translated_final_reply": "docs/ai-use/APPENDIX_RESPONSE.md"
     }
   ],
   "nana_original": {
@@ -49,5 +49,6 @@
     "historical_tool_model": "NOT_PROVIDED",
     "original_prompts": "NOT_PROVIDED",
     "complete_original_responses": "NOT_PROVIDED"
-  }
+  },
+  "record_language": "English translations; original-language text excluded from current package"
 }

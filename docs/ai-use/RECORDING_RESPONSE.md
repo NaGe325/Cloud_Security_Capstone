@@ -1,24 +1,26 @@
-# Complete final response for the recording-guide follow-up
+# English translation: final response for the recording-guide follow-up
 
-已生成三份材料，都对应**原版 12 页 slides**：
+This is an English translation, not the verbatim original response. File references are relative to this record. Some files mentioned in this historical response were subsequently removed.
 
-- [完整录制指南](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/docs/RECORDING_WALKTHROUGH.md>)：英文逐字稿＋中文点按步骤＋切屏顺序＋备用话术。
-- [纯英文照读稿](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/docs/RECORDING_SCRIPT_EN.md>)：录制时直接读，目标总时长 **16–18 分钟**。
-- [与 Nana 原版的修改对照](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/docs/CHANGES_FROM_NANA.md>)。
+Three materials have been prepared for the original 12-slide presentation:
 
-**我在 Nana 基础上改了什么？**
+- A complete recording guide: an English read-aloud script, Chinese click-by-click instructions, screen-switching order and fallback wording. The working file was `docs/RECORDING_WALKTHROUGH.md` (subsequently removed).
+- An [English read-aloud script](../RECORDING_SCRIPT_EN.md), targeting a total recording time of 16–18 minutes.
+- A comparison with Nana's original work: `docs/CHANGES_FROM_NANA.md` (subsequently removed).
 
-Nana 原来已经做好核心项目。五项检查、88 项测试、Lambda/SAM、报告和 demo 的代码都没有改。我的补充是：
+What changed from Nana's version?
 
-- 第 1 页加姓名；第 6 页修正流程顺序；第 9 页放大证据；第 10 页补时间／成本分析。其余 8 页原样保留。
-- 补讲稿、答辩准备、评分对照、验证记录及提交包；重新运行原测试。
+Nana had already completed the core project. The five checks, 88 tests, Lambda/SAM implementation, reports and demo code were unchanged. The additions were:
 
-**现在从第一步开始，先不要录。**
+- Student names on slide 1, a corrected workflow sequence on slide 6, more readable evidence on slide 9 and time/cost analysis on slide 10. The other eight slides were preserved.
+- Speaker notes, Q&A preparation, rubric mapping, validation records and a submission package. The existing tests were rerun.
 
-在同一个 Chrome 窗口，从左到右准备这三个标签：
+Start with preparation before recording.
 
-1. [补全后的 PDF](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/slides/MedTech-Security-Baseline-Slides.pdf>)，停在第 1 页。
-2. [本地 demo](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/demo/index.html>)，选择 **Misconfigured → Findings & actions**。
-3. [完整 HTML 报告](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/demo/reports/misconfigured.html>)。
+In the same Chrome window, prepare these three tabs from left to right:
 
-文件可以拖入 Chrome 打开。准备好后回我“好了”，我从第一页开始，按“展示什么 → 说什么 → 下一步点哪里”带你排练。
+1. The [updated PDF](../../slides/MedTech-Security-Baseline-Slides.pdf), on slide 1.
+2. The [local demo](../../demo/index.html), with **Misconfigured → Findings & actions** selected.
+3. The [complete HTML report](../../demo/reports/misconfigured.html).
+
+You can drag the files into Chrome to open them. When ready, reply “Ready.” I will guide you from slide 1 through what to show, what to say and where to click next.

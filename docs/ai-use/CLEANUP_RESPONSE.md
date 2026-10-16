@@ -1,7 +1,9 @@
-# Complete final response for the submission-cleanup request
+# English translation: final response for the submission-cleanup request
 
-已删除**中文讲稿、双语录制指南和中文答辩速记**，保留纯英文讲稿，并更新了 PR 和提交包。
+This is an English translation, not the verbatim original response. It describes the package at the time of that response; the appendix was translated into English in a later revision.
 
-请用这个[最新版提交 ZIP](</Users/xinyizhang/Documents/ChatGPT/ds面试/Cloud_Security_Capstone/downloads/medtech-compliance-checker.zip>)，不要上传之前下载的旧包。
+The Chinese presentation script, bilingual recording guide and Chinese Q&A notes have been removed. The English script has been retained, and the PR and submission package have been updated.
 
-AI 使用附录中的原始中文对话仍单独保留，用于课程要求的披露，不是讲稿。
+Please use the [latest submission ZIP](../../downloads/medtech-compliance-checker.zip) rather than a previously downloaded copy.
+
+At the time of this response, the original Chinese conversations were retained separately in the AI-use appendix for the course disclosure requirement. They were disclosure records, not rehearsal scripts.
